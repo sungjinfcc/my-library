@@ -23,11 +23,22 @@ body {
   flex-direction: column;
   background-color: antiquewhite;
 }
+.modal {
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30vw;
+  z-index: 1;
+}
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
 .modal form {
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  width: 30vw;
   border: 1px solid black;
   padding: 2vw;
 }
@@ -39,6 +50,9 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   display: none;
+}
+.overlay.active {
+  display: block;
 }
 .add {
   position: absolute;
