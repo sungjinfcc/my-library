@@ -16,12 +16,15 @@
       <div class="main-content"></div>
       <button class="add">+</button>
       <div class="modal">
-        <form>
-          <div class="title">Add new book!</div>
+        <form id="addBook">
+          <h3>Add new book!</h3>
           <input type="text" id="title" required placeholder="Title" />
           <input type="text" id="author" required placeholder="Author" />
-          <input type="number" id="pages" required />
-          <input type="checkbox" id="isRead" required />
+          <input type="number" id="pages" required placeholder="0" />
+          <div class="read">
+            <label for="isRead">Have you read this book?</label>
+            <input type="checkbox" id="isRead" required checked />
+          </div>
           <button class="submit" type="submit">Submit</button>
         </form>
       </div>

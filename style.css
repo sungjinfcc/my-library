@@ -1,13 +1,18 @@
+:root {
+  --color-main: #f9ebde;
+  --color-sub: #815854;
+}
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--color-sub);
 }
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: aliceblue;
+  background-color: var(--color-main);
   height: 100vh;
 }
 .main-content {
@@ -21,7 +26,35 @@ body {
 .main-content .card {
   display: flex;
   flex-direction: column;
-  background-color: antiquewhite;
+  background-color: var(--color-sub);
+  border: none;
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--color-main);
+  text-align: center;
+}
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.author {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.pages {
+  margin-bottom: 1rem;
+}
+.read,
+.remove {
+  background-color: var(--color-main);
+  color: var(--color-sub);
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  height: 3rem;
+  justify-self: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 .modal {
   transform: translate(-50%, -50%) scale(0);
@@ -29,18 +62,47 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 30vw;
-  z-index: 1;
+  width: 50vw;
 }
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
+  z-index: 1;
+  background-color: var(--color-sub);
+  color: var(--color-main);
+  border: none;
+  border-radius: 10px;
 }
-.modal form {
+form {
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  border: 1px solid black;
   padding: 2vw;
+}
+input {
+  border-radius: 3px;
+  border: none;
+  padding: 1vw 2vw;
+  margin-bottom: 2vw;
+}
+.read {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.read > input {
+  transform: scale(1.5);
+  margin-top: 2vw;
+}
+.submit {
+  border: none;
+  border-radius: 10px;
+  padding: 1vw 2vw;
+  width: 30%;
+  align-self: center;
+  background-color: var(--color-main);
+  color: var(--color-sub);
+  font-weight: 700;
 }
 .overlay {
   position: fixed;
@@ -48,6 +110,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 0;
   background-color: rgba(0, 0, 0, 0.2);
   display: none;
 }
@@ -62,6 +125,6 @@ body {
   border-radius: 50%;
   padding: 0.5rem 1rem;
   font-size: 2rem;
-  background-color: black;
-  color: white;
+  background-color: var(--color-sub);
+  color: var(--color-main);
 }
