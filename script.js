@@ -81,10 +81,12 @@ function updateGrid() {
 
     mainContent.append(container);
 
-    const readButton = document.querySelector(".read");
-    readButton.addEventListener("click", toggleRead);
-    const removeButton = document.querySelector(".remove");
-    removeButton.addEventListener("click", removeFromLibrary);
+    const readButtons = document.querySelectorAll(".read");
+    readButtons.forEach((item) => item.addEventListener("click", toggleRead));
+    const removeButtons = document.querySelectorAll(".remove");
+    removeButtons.forEach((item) =>
+      item.addEventListener("click", removeFromLibrary)
+    );
   }
 }
 
