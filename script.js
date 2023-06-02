@@ -1,8 +1,10 @@
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = isRead;
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = isRead;
+  }
 }
 let myLibrary = [];
 
