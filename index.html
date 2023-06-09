@@ -18,9 +18,11 @@
       <div class="modal">
         <form id="addBook">
           <h2>Add new book!</h3>
-          <input type="text" id="title" placeholder="Title" />
+          <input type="text" id="title" placeholder="Title" required/>
+          <span class="error" id="error-title"></span>
           <input type="text" id="author" placeholder="Author" />
-          <input type="number" id="pages" placeholder="0" />
+          <input type="number" id="pages" placeholder="0" min="1"/>
+          <span class="error" id="error-pages"></span>
           <div class="read-box">
             <label for="isRead">Have you read this book?</label>
             <input type="checkbox" id="isRead">

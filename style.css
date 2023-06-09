@@ -96,6 +96,12 @@ input {
   margin-bottom: 2vw;
   font-size: 1rem;
 }
+input:valid {
+  color: blue;
+}
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
 .read-box {
   display: flex;
   justify-content: space-evenly;
@@ -142,4 +148,13 @@ input[type="checkbox"] {
   font-size: 2rem;
   background-color: var(--color-sub);
   color: var(--color-main);
+}
+.error {
+  width: 100%;
+  color: red;
+  height: 0;
+}
+.error.active {
+  height: auto;
+  margin-bottom: 0.5rem;
 }

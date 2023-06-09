@@ -21,11 +21,23 @@ submitButton.addEventListener("click", addBookToLibrary);
 
 function addBookToLibrary(event) {
   event.preventDefault();
-  const title = document.getElementById("title").value;
+  const title = document.getElementById("title");
   const author = document.getElementById("author").value;
-  const pages = document.getElementById("pages").value;
+  const pages = document.getElementById("pages");
   const isRead = document.getElementById("isRead").checked;
-  let book = new Book(title, author, pages, isRead);
+  const errorTitle = document.querySelector("#error-title");
+  const errorPages = document.querySelector("#error-pages");
+  if (!title.validity.valid) {
+    errorTitle.textContent = "Please enter title!";
+    errorTitle.classList.add("active");
+    return;
+  }
+  if (!pages.validity.valid) {
+    errorPages.textContent = "Please enter a number bigger than 0!";
+    errorPages.classList.add("active");
+    return;
+  }
+  let book = new Book(title.value, author, pages.value, isRead);
   myLibrary.push(book);
   updateGrid();
   closeModal();
